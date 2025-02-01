@@ -3,6 +3,7 @@ using api.Interfaces;
 using api.Models;
 using api.Repository;
 using api.Service;
+using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,13 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add Database Connection
+var connectionString = $"Server={Env.GetString("DB_SERVER")},{Env.GetString("DB_PORT")};" +
+                       $"Database={Env.GetString("DB_NAME")};User Id={Env.GetString("DB_USER")};" +
+                       $"Password={Env.GetString("DB_PASSWORD")};TrustServerCertificate=True;";
+
+
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
