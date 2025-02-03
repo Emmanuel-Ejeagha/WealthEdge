@@ -25,6 +25,7 @@ namespace api.Repository
             return commentModel;
         }
 
+        // Delete a comment by id
         public async Task<Comment?> DeleteAsync(int id)
         {
             var commentModel = await _context.Comments.FirstOrDefaultAsync(x => x.Id == id);
@@ -46,7 +47,8 @@ namespace api.Repository
             if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
             {
                 comments = comments.Where(s => s.Stock.Symbol == queryObject.Symbol);
-            };
+            }
+            ;
             if (queryObject.IsDecsending == true)
             {
                 comments = comments.OrderByDescending(c => c.CreatedOn);
