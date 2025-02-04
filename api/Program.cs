@@ -12,9 +12,9 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Database Connection
-var connectionString = $"Server={Env.GetString("DB_SERVER")},{Env.GetString("DB_PORT")};" +
-                       $"Database={Env.GetString("DB_NAME")};User Id={Env.GetString("DB_USER")};" +
-                       $"Password={Env.GetString("DB_PASSWORD")};TrustServerCertificate=True;";
+// var connectionString = $"Server={Env.GetString("DB_SERVER")},{Env.GetString("DB_PORT")};" +
+//                        $"Database={Env.GetString("DB_NAME")};User Id={Env.GetString("DB_USER")};" +
+//                        $"Password={Env.GetString("DB_PASSWORD")};TrustServerCertificate=True;";
 
 
 
